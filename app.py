@@ -50,6 +50,7 @@ def delete_goal(goal_id):
     read_goals = [goal for goal in read_goals if goal["id"] != goal_id]
     return jsonify({"message": "Goal deleted"}), 200
 
+PORT = int(os.environ.get("PORT", 5000))
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5074, debug=True)
+    app.run(host="0.0.0.0", port=PORT, debug=True)
